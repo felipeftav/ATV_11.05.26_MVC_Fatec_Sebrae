@@ -1,5 +1,5 @@
 import sqlite3
-
+#
 class SuspeitoModel:
     def __init__(self):
         self.db_name = 'vault_original.db'

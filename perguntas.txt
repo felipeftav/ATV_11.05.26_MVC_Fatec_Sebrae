@@ -1,0 +1,24 @@
+Conseguiu perceber como o controller.py funciona como 
+um "maestro" de uma orquestra, dizendo quem deve tocar 
+em cada momento? Se algo der erro no banco, em qual dos 
+3 arquivos você iria primeiro para consertar?
+
+R: Percebi sim, o controller fica no meio de campo 
+passando a informação. Se der algo errado no banco de dados,
+o lugar que iria consertar era o model.py, que está localizado
+tudo relacionado ao banco de dados.
+
+Vocês notaram que o `Controller` ainda precisa "saber"
+demais sobre o que acontece dentro do Model e da View?
+Como poderíamos tornar a View ainda mais independente?
+
+R: Sim. O Controller ainda acaba conhecendo detalhes demais da View,
+como quando ele recebe diretamente os dados separados
+(nome, crime e nível). Isso faz com que ele dependa da
+forma como a View entrega essas informações.
+Uma forma de melhorar isso seria fazer a View devolver
+os dados de um jeito mais “organizado”
+(como um único objeto ou estrutura), para o Controller
+não precisar saber exatamente como eles estão separados.
+
+

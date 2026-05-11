@@ -1,6 +1,7 @@
 from model import SuspeitoModel
 from view import SuspeitoView
 
+#
 class SuspeitoController:
     def __init__(self):
         self.model = SuspeitoModel()

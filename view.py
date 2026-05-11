@@ -1,3 +1,4 @@
+#
 class SuspeitoView:
     def exibir_menu(self):
         print("\n--- 🕵️ DATA VAULT PRO (MVC) ---")
