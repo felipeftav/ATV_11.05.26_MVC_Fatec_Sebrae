@@ -1,17 +1,21 @@
+from view_model import SuspeitoViewModel
 from view import SuspeitoView
-from presenter import SuspeitoPresenter
 
 if __name__ == "__main__":
-    v = SuspeitoView()
-    p = SuspeitoPresenter(v)
-   
-    # Loop de execução
+    vm = SuspeitoViewModel()
+    v = SuspeitoView(vm)
+
     while True:
-        op = v.exibir_menu()
-        if op == '1': 
-            nome, crime, nivel = v.obter_dados_novo_suspeito()
-            p.adicionar_suspeito(nome, crime, nivel)
-        elif op == '2': 
-            p.listar_suspeitos()
-        elif op == '0': 
+        v.renderizar() # A View se desenha com o que estiver no VM
+        op = v.menu()
+
+        if op == '1':
+            nome = input("Nome: ")
+            crime = input("Crime: ")
+            nivel = input("Nível de Periculosidade (1-5): ")
+            vm.adicionar_novo(nome, crime, nivel) # Alteramos o VM, não a View!
+        elif op == '2':
+            vm.atualizar_dados()
+            vm.perigo_mensagem() # Verifica se o número de casos é preocupante
+        elif op == '0':
             break
