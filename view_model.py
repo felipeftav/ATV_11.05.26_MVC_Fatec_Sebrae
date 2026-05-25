@@ -26,5 +26,3 @@ class SuspeitoViewModel:
     def perigo_mensagem(self):
         if self.contador_casos > 5: 
             self.mensagem_status = "ALERTA: Muitos casos!" 
-        else:
-            self.mensagem_status = "Número de casos dentro do esperado."
